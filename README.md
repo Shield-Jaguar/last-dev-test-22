@@ -1,16 +1,57 @@
-# Deployment Successful!
-You have succesfully deployed the SDK to this repository.
 
-This repository contains two branches. 
-* master
-* CodeGen-CS
+# Getting Started with APIMATIC Calculator
 
-Changes made on the generated branch will be overwritten.
+## Introduction
 
-Make sure to make your customisations on a different branch (e.g master) and then pull new versions of the generated code.
+Simple calculator API hosted on APIMATIC
 
-For any enquires contact support@apimatic.io
+## Install the Package
 
-Happy generating!
+If you are building with .NET CLI tools then you can also use the following command:
 
-APIMATIC
+```bash
+dotnet add package ApimaticCalculator.66 --version 1.0.2
+```
+
+You can also view the package at:
+https://www.nuget.org/packages/ApimaticCalculator.66/1.0.2
+
+## Test the SDK
+
+The generated SDK also contain one or more Tests, which are contained in the Tests project. In order to invoke these test cases, you will need `NUnit 3.0 Test Adapter Extension` for Visual Studio. Once the SDK is complied, the test cases should appear in the Test Explorer window. Here, you can click `Run All` to execute these test cases.
+
+## Initialize the API Client
+
+**_Note:_** Documentation for the client can be found [here.](doc/client.md)
+
+The following parameters are configurable for the API Client:
+
+| Parameter | Type | Description |
+|  --- | --- | --- |
+| `Environment` | Environment | The API environment. <br> **Default: `Environment.Production`** |
+| `Timeout` | `TimeSpan` | Http client timeout.<br>*Default*: `TimeSpan.FromSeconds(100)` |
+
+The API client can be initialized as follows:
+
+```csharp
+APIMATICCalculator.Standard.APIMATICCalculatorClient client = new APIMATICCalculator.Standard.APIMATICCalculatorClient.Builder()
+    .Environment(APIMATICCalculator.Standard.Environment.Production)
+    .Build();
+```
+
+## List of APIs
+
+* [Simple Calculator](doc/controllers/simple-calculator.md)
+
+## Classes Documentation
+
+* [Utility Classes](doc/utility-classes.md)
+* [HttpRequest](doc/http-request.md)
+* [HttpResponse](doc/http-response.md)
+* [HttpStringResponse](doc/http-string-response.md)
+* [HttpContext](doc/http-context.md)
+* [HttpClientConfiguration](doc/http-client-configuration.md)
+* [HttpClientConfiguration Builder](doc/http-client-configuration-builder.md)
+* [IAuthManager](doc/i-auth-manager.md)
+* [ApiException](doc/api-exception.md)
+
